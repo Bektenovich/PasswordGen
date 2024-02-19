@@ -1,7 +1,7 @@
+// Online C++ compiler to run C++ program online
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <cctype>
 
 using namespace std;
 
@@ -20,23 +20,13 @@ int main() {
     cin >> n;
 
     string password;
-    bool hasDigit = false;
 
     for (int i = 0; i < n; ++i) {
-        char c = GenRand();
-        password += c;
-        if (isdigit(c)) {
-            hasDigit = true;
-        }
+        password += GenRand();
     }
 
-    cout << "Your Password is: " << password;
-
-    if (n >= 10 && hasDigit) {
-        cout << "\n\nThis is a strong password.";
-    } else {
-        cout << "\n\nThis is a weak password.";
-    }
+    cout << "Your Password is: " << password
+         << "\n\nThis is a " << (n >= 10 ? "strong" : "weak") << " password.";
 
     cout << endl << "THANK YOU JENISHBEK AGAY";
     return 0;
